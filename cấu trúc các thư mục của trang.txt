@@ -1,0 +1,29 @@
+📂 public
+│── 📂 css
+│── 📂 images
+│── 📂 scripts
+│── 📄 index.php        (Trang chính)
+│── 📄 article.php      (Trang bài viết)
+│── 📄 login.php        (Trang đăng nhập)
+│
+📂 private
+│── 📂 config
+│   │── 📄 database.php   (Kết nối DB)
+│
+│── 📂 controllers
+│   │── 📄 ArticleController.php  (Xử lý bài viết)
+│   │── 📄 AuthController.php     (Xử lý đăng nhập)
+│
+│── 📂 models
+│   │── 📄 Article.php   (Model bài viết)
+│   │── 📄 User.php      (Model người dùng)
+│
+│── 📂 views
+│   │── 📂 layouts
+│   │   │── 📄 header.php
+│   │   │── 📄 footer.php
+│   │
+│   │── 📂 pages
+│   │   │── 📄 home.php
+│   │   │── 📄 article.php
+│   │   │── 📄 login.php
