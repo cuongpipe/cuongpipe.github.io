@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini App</title>
+  <meta charset="utf-8" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f3f3f3; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Hello từ Telegram WebApp</h1>
+  <button onclick="sayHi()">Click tui</button>
+  <script>
+    function sayHi() {
+      Telegram.WebApp.sendData("Bạn đã nhấn nút!");
+    }
+  </script>
+</body>
+</html>
 
