@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mini App</title>
+  <title>Telegram Mini App</title>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #f3f3f3; }
-    button { padding: 10px 20px; font-size: 16px; }
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: var(--tg-theme-bg-color, #ffffff);
+      color: var(--tg-theme-text-color, #000000);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
-  <h1>Hello từ Telegram WebApp</h1>
-  <button onclick="sayHi()">Click tui</button>
+  <h2>Chào {{user}}</h2>
+  <p>Đây là Web App đơn giản dùng Telegram JS SDK!</p>
+  <button onclick="sendData()">Gửi dữ liệu về bot</button>
+
   <script>
-    function sayHi() {
-      Telegram.WebApp.sendData("Bạn đã nhấn nút!");
+    const tg = window.Telegram.WebApp;
+
+    tg.expand(); // Mở rộng web app toàn màn hình
+
+    const user = tg.initDataUnsafe.user?.first_name || "bạn";
+    document.body.innerHTML = document.body.innerHTML.replace("{{user}}", user);
+
+    function sendData() {
+      tg.sendData("Người dùng đã nhấn nút gửi!");
     }
   </script>
 </body>
 </html>
-
